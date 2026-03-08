@@ -1,9 +1,17 @@
 # Unscented Kalman Filter Sensor Fusion
 
-This project implements an Unscented Kalman Filter (UKF) for sensor fusion using radar and lidar measurements.  
+## Overview
+This project implements an Unscented Kalman Filter for tracking an object's state using lidar and radar measurements.  
 The goal is to estimate the state of a moving object using nonlinear process and measurement models.
 
-This project was completed as part of the Udacity Self-Driving Car Engineer Nanodegree.
+## Problem Statement
+Estimate object position and motion from noisy nonlinear sensor measurements.
+
+## Features
+- Radar and lidar fusion
+- CTRV motion model
+- UKF prediction and update steps
+- C++ implementation with CMake
 
 ## Algorithm Overview
 
@@ -57,5 +65,9 @@ unscented-kalman-filter
 ├── CMakeLists.txt
 └── README.md
 
-Results
+## Results
 The filter estimates object position and velocity using radar and lidar sensor fusion.
+![UKF tracking result](media/ukf_tracking.png)
+
+## Notes
+In this version, Eigen is resolved via `find_package(Eigen3 CONFIG REQUIRED)` instead of bundling the dependency in the repository.
