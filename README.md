@@ -45,6 +45,6 @@ unscented-kalman-filter/
 ## Author
 **Vasan Iyer**  
 Embedded systems/ Autonomous systems / Sensor Fusion Engineer  
-Focus: Sensor fusion, Kalman Filtering, Autonomous systems, Flight Dynamics, Flight controls, navigation, PID control, UAV systems,  Embedded Software development, C++, Python,  sensor fusion, simulation-based verification.
+Focus: Sensor fusion, Kalman Filtering, Autonomous systems, Flight Dynamics, Flight controls, navigation, PID control, UAV systems,  Embedded Software development, C++, Python, simulation-based verification.
 
 GitHub: https://github.com/Vaiy108
