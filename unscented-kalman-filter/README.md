@@ -63,7 +63,21 @@ make
 
 ./ukf
 
-## Project Structure
+## Results
+The filter estimates object position and velocity using radar and lidar sensor fusion.
+
+### Tracking Visualization
+![UKF tracking result](media/ukf_tracking.png)
+
+## 💡 Skills Demonstrated
+- Sensor fusion
+- Unscented Kalman Filter implementation
+- Nonlinear state estimation
+- Radar and lidar measurement modeling
+- C++ numerical programming with Eigen
+- CMake project configuration
+
+## 📂 Project Structure
 ```
 unscented-kalman-filter
 ├── src
@@ -75,11 +89,8 @@ unscented-kalman-filter
 ├── CMakeLists.txt
 └── README.md
 ```
-## Results
-The filter estimates object position and velocity using radar and lidar sensor fusion.
 
-### Tracking Visualization
-![UKF tracking result](media/ukf_tracking.png)
+
 
 ## Notes
 In this version, Eigen is resolved via `find_package(Eigen3 CONFIG REQUIRED)` instead of bundling the dependency in the repository.
