@@ -43,7 +43,10 @@ Radar and lidar measurements are fused to improve state estimation.
 
 The following diagram illustrates the Unscented Kalman Filter sensor fusion pipeline.
 
-![UKF Pipeline](media/ukf_pipeline.png)
+<p align="center">
+<img src="media/ukf_pipeline.png" width="400"/>
+</p>
+
 
 ## Mathematical Formulation
 
