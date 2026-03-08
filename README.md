@@ -18,6 +18,11 @@ Features:
 Project folder:
 unscented-kalman-filter/
 
+### Tracking Visualization
+<p align="center">
+<img src="media/ukf_track.gif" width="900"/>
+</p>
+
 ---
 
 **Skills shown**
