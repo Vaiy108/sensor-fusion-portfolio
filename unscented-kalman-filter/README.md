@@ -51,7 +51,7 @@ make
 ./ukf
 
 ## Project Structure
-
+```
 unscented-kalman-filter
 ├── src
 │ ├── main.cpp
@@ -61,7 +61,7 @@ unscented-kalman-filter
 ├── media
 ├── CMakeLists.txt
 └── README.md
-
+```
 ## Results
 The filter estimates object position and velocity using radar and lidar sensor fusion.
 
