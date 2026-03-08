@@ -39,6 +39,60 @@ For each sensor measurement:
 
 Radar and lidar measurements are fused to improve state estimation.
 
+## Mathematical Formulation
+
+The Unscented Kalman Filter estimates the system state:
+
+x = [px, py, v, ψ, ψ̇]
+
+where:
+
+- px, py → position
+- v → velocity
+- ψ → yaw angle
+- ψ̇ → yaw rate
+
+### Process Model (CTRV)
+
+The system assumes a Constant Turn Rate and Velocity (CTRV) motion model.
+
+If ψ̇ ≠ 0:
+
+px_{k+1} = px + (v / ψ̇) [ sin(ψ + ψ̇Δt) − sin(ψ) ]
+
+py_{k+1} = py + (v / ψ̇) [ −cos(ψ + ψ̇Δt) + cos(ψ) ]
+
+ψ_{k+1} = ψ + ψ̇Δt
+
+If ψ̇ ≈ 0:
+
+px_{k+1} = px + v cos(ψ) Δt  
+py_{k+1} = py + v sin(ψ) Δt
+
+### Sigma Points
+
+Sigma points are generated using:
+
+X_i = x ± √((λ + n) P)
+
+where:
+
+- n → state dimension
+- P → covariance matrix
+- λ → scaling parameter
+
+### Measurement Update
+
+Radar measurements:
+
+z = [ρ, φ, ρ̇]
+
+where:
+
+ρ = √(px² + py²)  
+φ = atan2(py, px)  
+ρ̇ = (px vx + py vy) / ρ
+
 ## Dependencies
 
 - C++
