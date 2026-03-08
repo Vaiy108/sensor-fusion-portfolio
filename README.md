@@ -1,18 +1,25 @@
 # Sensor Fusion Portfolio
 
-This repository contains projects related to sensor fusion and state estimation for autonomous systems.
-
+This repository is a collection of C++ sensor fusion and state estimation projects completed as part of the Udacity Self-Driving Car Engineer Nanodegree, with cleanup and documentation for portfolio presentation.
 
 ## Projects
 
-### Unscented Kalman Filter
-Sensor fusion using radar and lidar measurements to estimate object state.
+### 1. Unscented Kalman Filter
+Radar-lidar sensor fusion for nonlinear state estimation.
 
-Location:
-unscented-kalman-filter/
-
-Topics:
-- Nonlinear state estimation
+**Skills shown**
+- C++
+- CMake
+- Kalman filtering
+- Unscented transform
+- Radar/lidar fusion
+- Non-linear State estimation
 - Sigma points
-- Radar and lidar fusion
-- C++ implementation
+
+[Open project](./unscented-kalman-filter)
+
+## Tech Stack
+- C++
+- CMake
+- Eigen3
+- Git/GitHub
