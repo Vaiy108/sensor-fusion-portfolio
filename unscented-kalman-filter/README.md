@@ -53,15 +53,12 @@ make
 ## Project Structure
 
 unscented-kalman-filter
-│
 ├── src
-│   ├── ukf.cpp
-│   ├── ukf.h
-│   ├── main.cpp
-│   └── tools.cpp
-│
+│ ├── main.cpp
+│ ├── ukf.cpp
+│ ├── ukf.h
+│ └── tools.cpp
 ├── media
-│
 ├── CMakeLists.txt
 └── README.md
 
