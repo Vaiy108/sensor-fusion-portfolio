@@ -127,6 +127,7 @@ make
 The filter estimates object position and velocity using radar and lidar sensor fusion.
 
 ### Tracking Visualization
+![UKF tracking result](media/ukf_track.gif)
 ![UKF tracking result](media/ukf_tracking.png)
 
 ## 💡 Skills Demonstrated
