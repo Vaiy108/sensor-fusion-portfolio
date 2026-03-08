@@ -131,11 +131,11 @@ The filter estimates object position and velocity using radar and lidar sensor f
 
 ### Tracking Visualization
 <p align="center">
-<img src="media/ukf_track.gif" width="600"/>
+<img src="media/ukf_track.gif" width="900"/>
 </p>
 
 <p align="center">
-<img src="media/ukf_tracking.png" width="350"/>
+<img src="media/ukf_tracking.png" width="500"/>
 </p>
 
 
