@@ -154,3 +154,11 @@ unscented-kalman-filter
 
 ## Notes
 In this version, Eigen is resolved via `find_package(Eigen3 CONFIG REQUIRED)` instead of bundling the dependency in the repository.
+
+
+## Author
+**Vasan Iyer**  
+Embedded systems/ Autonomous systems / Sensor Fusion Engineer  
+Focus: Sensor fusion, Kalman Filtering, Autonomous systems, Flight Dynamics, Flight controls, navigation, PID control, UAV systems,  Embedded Software development, C++, Python,  sensor fusion, simulation-based verification.
+
+GitHub: https://github.com/Vaiy108
