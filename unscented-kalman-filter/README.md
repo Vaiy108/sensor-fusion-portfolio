@@ -136,7 +136,7 @@ The filter estimates object position and velocity using radar and lidar sensor f
 
 ### Typical RMSE Accuracy values for position and velocity
 <p align="center">
-<img src="media/ukf_tracking.png" width="700"/>
+<img src="media/ukf_tracking.png" width="800"/>
 </p>
 
 
