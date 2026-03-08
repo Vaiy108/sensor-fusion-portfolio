@@ -1,6 +1,6 @@
 # Sensor Fusion Portfolio
 
-This repository is a collection of C++ sensor fusion and state estimation projects completed as part of the Udacity Self-Driving Car Engineer Nanodegree, with cleanup and documentation for portfolio presentation.
+This repository is a collection of C++ sensor fusion and state estimation projects with cleanup and documentation for portfolio presentation.
 
 ## Projects
 
