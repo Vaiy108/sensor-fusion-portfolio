@@ -21,8 +21,21 @@ x = [px, py, v, yaw, yaw_rate]
 
 The filter performs two main steps:
 
-1. Prediction
-2. Measurement Update
+### Prediction
+1. Generate sigma points
+2. Augment sigma points with process noise
+3. Predict sigma points through the motion model
+4. Compute predicted state mean and covariance
+
+### Update
+
+For each sensor measurement:
+
+**Lidar**
+- Linear position update
+
+**Radar**
+- Nonlinear measurement update using polar coordinates
 
 Radar and lidar measurements are fused to improve state estimation.
 
