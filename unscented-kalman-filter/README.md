@@ -46,11 +46,11 @@ cd build
 cmake ..
 make
 ```
-Run the program
+## Run the program
 
 ./ukf
 
-Project Śtructure
+## Project Structure
 
 unscented-kalman-filter
 │
