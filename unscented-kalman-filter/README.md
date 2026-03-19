@@ -66,6 +66,7 @@ where:
 The system assumes a Constant Turn Rate and Velocity (CTRV) motion model.
 
 If ψ̇ ≠ 0:
+
 $$
 px_{k+1} = px + (v / ψ̇) [ sin(ψ + ψ̇Δt) − sin(ψ) ]
 $$
@@ -79,6 +80,7 @@ $$
 $$
 
 If ψ̇ ≈ 0:
+
 $$
 px_{k+1} = px + v cos(ψ) Δt
 $$
@@ -108,9 +110,17 @@ z = [ρ, φ, ρ̇]
 
 where:
 
-ρ = √(px² + py²)  
-φ = atan2(py, px)  
+$$
+ρ = √(px² + py²) 
+$$
+
+$$
+φ = atan2(py, px)
+$$
+
+$$
 ρ̇ = (px vx + py vy) / ρ
+$$
 
 ## Dependencies
 
