@@ -22,7 +22,7 @@ Estimate position, velocity, and orientation of an object using:
 - State vector:
   $$
   \[
-  x = [p_x, p_y, v, \psi, \dot{\psi}]
+  x = x = [px, py, v, ψ, ψ̇]
   \]
   $$
 
