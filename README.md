@@ -19,12 +19,12 @@ Estimate position, velocity, and orientation of an object using:
 
 ###  Approach
 
-- State vector:  
+- State vector:
+  $$
   \[
-  $$
   x = [p_x, p_y, v, \psi, \dot{\psi}]
-  $$
   \]
+  $$
 
 - Motion model:  
   **CTRV (Constant Turn Rate and Velocity)**
