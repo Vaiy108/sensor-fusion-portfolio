@@ -93,7 +93,7 @@ unscented-kalman-filter/
 
 ---
 
-### 💡 What I Learned
+### 💡 Skills Learned
 
 - Practical implementation of the **Unscented Kalman Filter**
 - Handling nonlinear systems with sigma points
