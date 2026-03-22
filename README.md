@@ -1,50 +1,127 @@
 # Sensor Fusion Portfolio
 
-This repository contains projects related to sensor fusion and state estimation for autonomous systems.
+This repository showcases my work on **sensor fusion and state estimation** for autonomous systems, with a focus on **Kalman filtering techniques** used in robotics and self-driving applications.
 
-The projects were implemented in C++ and focus on Kalman filtering techniques used in robotics and autonomous driving.
+All projects are implemented in **C++** with an emphasis on mathematical correctness, real-time considerations, and clear system design.
 
-## Projects
+---
 
-### Unscented Kalman Filter
-Sensor fusion using radar and lidar measurements to estimate object motion.
+## 🚀 Featured Project: Unscented Kalman Filter (UKF)
 
-Features:
-- Nonlinear state estimation
-- Radar and lidar fusion
-- C++ implementation using Eigen
-- CMake build system
+A full implementation of an **Unscented Kalman Filter (UKF)** for fusing **radar and lidar measurements** to estimate the state of a moving object.
 
-Project folder:
-unscented-kalman-filter/
+### 🔍 Problem
+Estimate position, velocity, and orientation of an object using:
+- **Radar (nonlinear measurements)** → range, bearing, range rate  
+- **Lidar (linear measurements)** → position (x, y)
 
-### Tracking Visualization
+---
+
+### 🧠 Approach
+
+- State vector:  
+  \[
+  x = [p_x, p_y, v, \psi, \dot{\psi}]
+  \]
+
+- Motion model:  
+  **CTRV (Constant Turn Rate and Velocity)**
+
+- Key components:
+  - Augmented state with process noise
+  - Sigma point generation using unscented transform
+  - Nonlinear prediction step
+  - Sensor-specific update steps:
+    - Linear update (lidar)
+    - Nonlinear update (radar)
+
+---
+
+### ⚙️ Implementation Highlights
+
+- Full UKF pipeline:
+  - Initialization from first measurement
+  - Time-based prediction
+  - Sensor fusion updates
+- Angle normalization for stability
+- Numerical safeguards (division-by-zero handling)
+- Clean modular C++ design using Eigen
+
+---
+
+### 📊 Results
+
 <p align="center">
 <img src="media/ukf_track.gif" width="900"/>
 </p>
 
+- Accurate tracking of nonlinear motion
+- Stable fusion of radar and lidar measurements
+- Smooth trajectory estimation
+
+> (Add your RMSE values here if available — this is important for hiring managers)
+
 ---
 
-**Skills shown**
-- C++
-- CMake
-- Kalman filtering
-- Unscented transform
-- Radar/lidar fusion
-- Non-linear State estimation
-- Sigma points
+### 🛠️ Tech Stack
 
-[Open project](./unscented-kalman-filter)
-
-## Tech Stack
 - C++
+- Eigen (linear algebra)
 - CMake
-- Eigen3
 - Git/GitHub
 
-## Author
+---
+
+### 📁 Project Structure
+```
+unscented-kalman-filter/
+├── src/
+│ ├── ukf.cpp
+│ ├── ukf.h
+│ └── main.cpp
+├── media/
+└── CMakeLists.txt
+````
+
+
+---
+
+### 💡 What I Learned
+
+- Practical implementation of the **Unscented Kalman Filter**
+- Handling nonlinear systems with sigma points
+- Differences between radar and lidar measurement models
+- Importance of numerical stability in estimation systems
+- Real-world considerations in sensor fusion pipelines
+
+---
+
+## 🧩 Skills Demonstrated
+
+- C++
+- Sensor Fusion
+- Kalman Filtering (EKF / UKF)
+- Nonlinear State Estimation
+- Unscented Transform
+- Radar & Lidar Fusion
+- Linear Algebra (Eigen)
+- System Modeling (CTRV)
+
+---
+
+## 👤 Author
+
 **Vasan Iyer**  
-Embedded systems/ Autonomous systems / Sensor Fusion Engineer  
-Focus: Sensor fusion, Kalman Filtering, Autonomous systems, Flight Dynamics, Flight controls, navigation, PID control, UAV systems,  Embedded Software development, C++, Python, simulation-based verification.
+Sensor Fusion / Autonomous Systems Engineer  
+
+Focus areas:
+- Sensor fusion & state estimation  
+- Autonomous systems  
+- Flight dynamics & control  
+- Embedded systems (C++, Python)  
+- UAV systems & simulation  
 
 GitHub: https://github.com/Vaiy108
+
+
+---
