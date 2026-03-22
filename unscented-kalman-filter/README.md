@@ -1,17 +1,40 @@
 # Unscented Kalman Filter Sensor Fusion
 
 ## Overview
-This project implements an Unscented Kalman Filter for tracking an object's state using lidar and radar measurements.  
-The goal is to estimate the state of a moving object using nonlinear process and measurement models.
+This project implements an **Unscented Kalman Filter (UKF)** for fusing **radar and lidar measurements** to estimate the state of a moving object in a nonlinear system.
 
-## Problem Statement
-Estimate object position and motion from noisy nonlinear sensor measurements.
+The implementation focuses on:
+- Robust nonlinear state estimation
+- Sensor fusion across heterogeneous measurement models
+- Numerically stable real-time filtering
 
-## Features
-- Radar and lidar fusion
-- CTRV motion model
-- UKF prediction and update steps
-- C++ implementation with CMake
+## Problem
+Estimate the full state of a moving object:
+
+$$
+\[
+x = [p_x, p_y, v, \psi, \dot{\psi}]
+\]
+$$
+
+using noisy sensor measurements:
+
+- **Lidar** → linear position measurements $$\((p_x, p_y)\)$$  
+- **Radar** → nonlinear measurements $$\((\rho, \phi, \dot{\rho})\)$$
+
+---
+
+## Approach
+
+### Motion Model
+- **CTRV (Constant Turn Rate and Velocity)**  
+- Suitable for vehicle-like motion with smooth turns
+
+### Why UKF?
+- Avoids linearization errors of EKF  
+- Uses **sigma points** to better capture nonlinear transformations  
+
+---
 
 ## Algorithm Overview
 
@@ -23,7 +46,6 @@ x = [p_x, p_y, v, \psi, \dot{\psi}]
 \]
 $$
 
-x = [$$p_x$$, py, v, yaw, yaw_rate]
 
 The filter performs two main steps:
 
@@ -52,11 +74,46 @@ The following diagram illustrates the Unscented Kalman Filter sensor fusion pipe
 <p align="center">
 <img src="media/ukf_pipeline.png" width="400"/>
 </p>
+### Prediction Step
+1. Augment state with process noise
+2. Generate sigma points
+3. Propagate through CTRV model
+4. Recover predicted mean and covariance
 
+### Update Step
+
+#### Lidar (Linear)
+- Direct position update using standard Kalman equations
+
+#### Radar (Nonlinear)
+- Transform sigma points into measurement space
+- Normalize angles to maintain consistency
+- Apply unscented update
+
+---
+
+## 🔧 Design Decisions
+
+- **CTRV Model Selection**  
+  Chosen for realistic vehicle motion modeling with constant velocity and turn rate.
+
+- **Radar vs Lidar Handling**  
+  Lidar uses a linear update, while radar requires nonlinear transformation due to polar measurements.
+
+- **Angle Normalization**  
+  Implemented to prevent discontinuities in yaw and bearing.
+
+- **Initialization Strategy**  
+  Radar initializes velocity using range rate, while lidar initializes velocity as zero.
+
+- **Numerical Stability**  
+  Safeguards added to avoid division by zero and instability in angle calculations.
+
+---
 
 ## Mathematical Formulation
 
-The Unscented Kalman Filter estimates the system state:
+### State Definition: The Unscented Kalman Filter estimates the system state:
 
 $$
 \[
@@ -64,48 +121,49 @@ x = [p_x, p_y, v, \psi, \dot{\psi}]
 \]
 $$
 
-x = [px, py, v, ψ, ψ̇]
-
 where:
 
-- px, py → position
+- $$p_x, p_y$$ → position
 - v → velocity
-- ψ → yaw angle
-- ψ̇ → yaw rate
+- $$\psi$$ → yaw angle
+- $$\dot{\psi}$$→ yaw rate
 
-### Process Model (CTRV)
+### CTRV Process Model
 
 The system assumes a Constant Turn Rate and Velocity (CTRV) motion model.
 
-If ψ̇ ≠ 0:
+If $$\( \dot{\psi} \neq 0 \)$$:
 
 $$
-px_{k+1} = px + (v / ψ̇) [ sin(ψ + ψ̇Δt) − sin(ψ) ]
+p_{x,k+1} = p_x + \frac{v}{\dot{\psi}} [\sin(\psi + \dot{\psi}\Delta t) - \sin(\psi)]
 $$
 
 $$
-py_{k+1} = py + (v / ψ̇) [ −cos(ψ + ψ̇Δt) + cos(ψ) ]
+p_{y,k+1} = p_y + \frac{v}{\dot{\psi}} [-\cos(\psi + \dot{\psi}\Delta t) + \cos(\psi)]
 $$
 
 $$
 ψ_{k+1} = ψ + ψ̇Δt
 $$
 
-If ψ̇ ≈ 0:
+If $$\( \dot{\psi} \approx 0 \)$$:
 
 $$
-px_{k+1} = px + v cos(ψ) Δt
+p_{x,k+1} = p_x + v \cos(\psi)\Delta t
 $$
 
 $$
-py_{k+1} = py + v sin(ψ) Δt
+p_{y,k+1} = p_y + v \sin(\psi)\Delta t
 $$
+
+---
+
 ### Sigma Points
 
 Sigma points are generated using:
 
 $$
-X_i = x ± √((λ + n) P)
+X_i = x \pm \sqrt{(\lambda + n)P}
 $$
 
 where:
@@ -116,23 +174,25 @@ where:
 
 ### Measurement Update
 
-Radar measurements:
+### Radar Measurement Model:
 
 z = [ρ, φ, ρ̇]
 
 where:
 
 $$
-ρ = √(px² + py²) 
+\rho = \sqrt{p_x^2 + p_y^2}
 $$
 
 $$
-φ = atan2(py, px)
+\phi = \tan^{-1}(p_y / p_x)
 $$
 
 $$
-ρ̇ = (px vx + py vy) / ρ
+\dot{\rho} = \frac{p_x v_x + p_y v_y}{\rho}
 $$
+
+---
 
 ## Dependencies
 
@@ -159,17 +219,39 @@ make
 ./ukf
 
 ## Results
-The filter estimates object position and velocity using radar and lidar sensor fusion.
 
 ### Tracking Visualization
 <p align="center">
 <img src="media/ukf_track.gif" width="900"/>
 </p>
 
+### Performance (RMSE)
+
+> 
+- px: 0.06
+- py: 0.10
+- vx: 0.42
+- vy: 0.63
+>
+- Stable tracking under nonlinear motion
+- Smooth trajectory estimation
+- Effective fusion of radar and lidar data
+
+---
+
 ### Typical RMSE Accuracy values for position and velocity
 <p align="center">
 <img src="media/ukf_tracking.png" width="800"/>
 </p>
+
+## My Contribution
+
+- Implemented full UKF pipeline (prediction + update)
+- Designed radar and lidar measurement models
+- Implemented sigma point generation and weighting
+- Handled numerical stability (angle normalization, edge cases)
+- Tuned process noise parameters for stable tracking
+- Structured clean, modular C++ implementation
 
 
 ## 💡 Skills Demonstrated
@@ -179,6 +261,14 @@ The filter estimates object position and velocity using radar and lidar sensor f
 - Radar and lidar measurement modeling
 - C++ numerical programming with Eigen
 - CMake project configuration
+
+## 🛠️ Tech Stack
+
+- C++
+- Eigen (linear algebra)
+- CMake
+
+---
 
 ## 📂 Project Structure
 ```
@@ -193,7 +283,15 @@ unscented-kalman-filter
 └── README.md
 ```
 
+## Key Learnings
 
+- Practical implementation of nonlinear state estimation
+- Trade-offs between EKF and UKF
+- Importance of angle normalization in tracking systems
+- Handling real-world sensor noise and uncertainty
+- Designing stable estimation pipelines for autonomous systems
+
+---
 
 ## Notes
 In this version, Eigen is resolved via `find_package(Eigen3 CONFIG REQUIRED)` instead of bundling the dependency in the repository.
