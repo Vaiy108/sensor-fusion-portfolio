@@ -17,7 +17,7 @@ Estimate object position and motion from noisy nonlinear sensor measurements.
 
 The Unscented Kalman Filter is used to estimate the state vector:
 
-x = [px, py, v, yaw, yaw_rate]
+x = [$$p_x$$, py, v, yaw, yaw_rate]
 
 The filter performs two main steps:
 
