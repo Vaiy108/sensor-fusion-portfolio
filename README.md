@@ -21,9 +21,11 @@ Estimate position, velocity, and orientation of an object using:
 
 - State vector:
 
-  \[
-  x  = [px, py, v, ψ, ψ̇ ]
-  \]
+$$
+\[
+x = [p_x, p_y, v, \psi, \dot{\psi}]
+\]
+$$
 
 
 - Motion model:  
