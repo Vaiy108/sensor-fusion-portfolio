@@ -59,14 +59,12 @@ Estimate position, velocity, and orientation of an object using:
 - Stable fusion of radar and lidar measurements
 - Smooth trajectory estimation
 
-### > RMSE values:
-```
-> X: 0.06
-> Y: 0.1009
-> V_x: 0.45
-> V_y: 0.63
+- **RMSE:**
+- px: 0.09
+- py: 0.10
+- vx: 0.40
+- vy: 0.45
 
-```
 ---
 
 ### 🛠️ Tech Stack
