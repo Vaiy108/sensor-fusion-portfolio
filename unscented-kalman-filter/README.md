@@ -47,26 +47,6 @@ x = [p_x, p_y, v, \psi, \dot{\psi}]
 $$
 
 
-The filter performs two main steps:
-
-### Prediction
-1. Generate sigma points
-2. Augment sigma points with process noise
-3. Predict sigma points through the motion model
-4. Compute predicted state mean and covariance
-
-### Update
-
-For each sensor measurement:
-
-**Lidar**
-- Linear position update
-
-**Radar**
-- Nonlinear measurement update using polar coordinates
-
-Radar and lidar measurements are fused to improve state estimation.
-
 ## UKF Pipeline
 
 The following diagram illustrates the Unscented Kalman Filter sensor fusion pipeline.
@@ -74,11 +54,13 @@ The following diagram illustrates the Unscented Kalman Filter sensor fusion pipe
 <p align="center">
 <img src="media/ukf_pipeline.png" width="400"/>
 </p>
+
+The filter performs two main steps:
 ### Prediction Step
-1. Augment state with process noise
-2. Generate sigma points
-3. Propagate through CTRV model
-4. Recover predicted mean and covariance
+- Augment state with process noise
+- Generate sigma points
+- Propagate through CTRV model
+- Recover predicted mean and covariance
 
 ### Update Step
 
@@ -89,7 +71,8 @@ The following diagram illustrates the Unscented Kalman Filter sensor fusion pipe
 - Transform sigma points into measurement space
 - Normalize angles to maintain consistency
 - Apply unscented update
-
+  
+Radar and lidar measurements are fused to improve state estimation.
 ---
 
 ## 🔧 Design Decisions
@@ -143,7 +126,7 @@ p_{y,k+1} = p_y + \frac{v}{\dot{\psi}} [-\cos(\psi + \dot{\psi}\Delta t) + \cos(
 $$
 
 $$
-ψ_{k+1} = ψ + ψ̇Δt
+\psi_{k+1} = \psi + {\dot{\psi}}\Delta t
 $$
 
 If $$\( \dot{\psi} \approx 0 \)$$:
@@ -175,9 +158,9 @@ where:
 ### Measurement Update
 
 ### Radar Measurement Model:
-
-z = [ρ, φ, ρ̇]
-
+$$
+z = [\rho, \phi, \dot{\rho}]
+$$
 where:
 
 $$
