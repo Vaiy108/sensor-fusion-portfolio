@@ -60,11 +60,12 @@ Estimate position, velocity, and orientation of an object using:
 - Smooth trajectory estimation
 
 - **RMSE:**
+```
 - px: 0.09
 - py: 0.10
 - vx: 0.40
 - vy: 0.45
-
+```
 ---
 
 ### 🛠️ Tech Stack
