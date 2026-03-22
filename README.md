@@ -17,7 +17,7 @@ Estimate position, velocity, and orientation of an object using:
 
 ---
 
-### 🧠 Approach
+###  Approach
 
 - State vector:  
   \[
@@ -59,8 +59,14 @@ Estimate position, velocity, and orientation of an object using:
 - Stable fusion of radar and lidar measurements
 - Smooth trajectory estimation
 
-> (Add your RMSE values here if available — this is important for hiring managers)
+```
+> RMSE values:
+> X: 0.06
+> Y: 0.1009
+> V_x: 0.45
+> V_y: 0.63
 
+```
 ---
 
 ### 🛠️ Tech Stack
