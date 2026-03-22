@@ -63,10 +63,10 @@ Estimate position, velocity, and orientation of an object using:
 
 - **RMSE:**
 ```
-- px: 0.09
+- px: 0.06
 - py: 0.10
-- vx: 0.40
-- vy: 0.45
+- vx: 0.42
+- vy: 0.63
 ```
 ---
 
