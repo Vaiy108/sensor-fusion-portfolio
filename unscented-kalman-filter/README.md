@@ -158,9 +158,11 @@ where:
 ### Measurement Update
 
 ### Radar Measurement Model:
+
 $$
 z = [\rho, \phi, \dot{\rho}]
 $$
+
 where:
 
 $$
