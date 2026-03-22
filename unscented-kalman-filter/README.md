@@ -199,9 +199,7 @@ cd build
 cmake ..
 make
 ```
-## Run the program
 
-./ukf
 
 ## Results
 
