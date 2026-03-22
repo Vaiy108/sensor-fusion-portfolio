@@ -282,7 +282,13 @@ In this version, Eigen is resolved via `find_package(Eigen3 CONFIG REQUIRED)` in
 
 ## Author
 **Vasan Iyer**  
-Embedded systems/ Autonomous systems / Sensor Fusion Engineer  
-Focus: Sensor fusion, Kalman Filtering, Autonomous systems, Flight Dynamics, Flight controls, navigation, PID control, UAV systems,  Embedded Software development, C++, Python,  sensor fusion, simulation-based verification.
+Embedded systems/ Sensor Fusion / Autonomous Systems Engineer  
+
+Focus:
+- Sensor fusion & state estimation  
+- Autonomous systems  
+- Flight dynamics & control  
+- Embedded systems (C++, Python)  
+- UAV systems & simulation  
 
 GitHub: https://github.com/Vaiy108
