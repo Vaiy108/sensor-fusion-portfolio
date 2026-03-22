@@ -7,93 +7,107 @@
 class UKF {
  public:
   /**
-   * Constructor
+   * Constructs an Unscented Kalman Filter for fusing lidar and radar
+   * measurements.
    */
   UKF();
 
   /**
-   * Destructor
+   * Destroys the UKF instance.
    */
   virtual ~UKF();
 
   /**
-   * ProcessMeasurement
-   * @param meas_package The latest measurement data of either radar or laser
+   * Processes a new sensor measurement.
+   *
+   * On the first measurement, the filter initializes its state. On subsequent
+   * measurements, it performs prediction followed by the appropriate sensor
+   * update step.
+   *
+   * @param meas_package The latest radar or lidar measurement.
    */
   void ProcessMeasurement(MeasurementPackage meas_package);
 
   /**
-   * Prediction Predicts sigma points, the state, and the state covariance
-   * matrix
-   * @param delta_t Time between k and k+1 in s
+   * Predicts the state mean and covariance forward in time using the unscented
+   * transform and the CTRV motion model.
+   *
+   * @param delta_t Time elapsed since the previous measurement in seconds.
    */
   void Prediction(double delta_t);
 
   /**
-   * Updates the state and the state covariance matrix using a laser measurement
-   * @param meas_package The measurement at k+1
+   * Updates the state using a lidar measurement.
+   *
+   * Lidar directly observes position in Cartesian coordinates, so this step
+   * uses a linear measurement model.
+   *
+   * @param meas_package The incoming lidar measurement.
    */
   void UpdateLidar(MeasurementPackage meas_package);
 
   /**
-   * Updates the state and the state covariance matrix using a radar measurement
-   * @param meas_package The measurement at k+1
+   * Updates the state using a radar measurement.
+   *
+   * Radar observes range, bearing, and range rate, so this step performs a
+   * nonlinear measurement update in radar measurement space.
+   *
+   * @param meas_package The incoming radar measurement.
    */
   void UpdateRadar(MeasurementPackage meas_package);
 
-
-  // initially set to false, set to true in first call of ProcessMeasurement
+  // Indicates whether the filter has received its first measurement.
   bool is_initialized_;
 
-  // if this is false, laser measurements will be ignored (except for init)
+  // Enables or disables lidar updates after initialization.
   bool use_laser_;
 
-  // if this is false, radar measurements will be ignored (except for init)
+  // Enables or disables radar updates after initialization.
   bool use_radar_;
 
-  // state vector: [pos1 pos2 vel_abs yaw_angle yaw_rate] in SI units and rad
+  // State vector [px, py, v, yaw, yaw_rate].
   Eigen::VectorXd x_;
 
-  // state covariance matrix
+  // State covariance matrix.
   Eigen::MatrixXd P_;
 
-  // predicted sigma points matrix
+  // Predicted sigma points matrix.
   Eigen::MatrixXd Xsig_pred_;
 
-  // time when the state is true, in us
+  // Timestamp of the most recent processed measurement in microseconds.
   long long time_us_;
 
-  // Process noise standard deviation longitudinal acceleration in m/s^2
+  // Process noise standard deviation for longitudinal acceleration (m/s^2).
   double std_a_;
 
-  // Process noise standard deviation yaw acceleration in rad/s^2
+  // Process noise standard deviation for yaw acceleration (rad/s^2).
   double std_yawdd_;
 
-  // Laser measurement noise standard deviation position1 in m
+  // Lidar measurement noise standard deviation for position x (m).
   double std_laspx_;
 
-  // Laser measurement noise standard deviation position2 in m
+  // Lidar measurement noise standard deviation for position y (m).
   double std_laspy_;
 
-  // Radar measurement noise standard deviation radius in m
+  // Radar measurement noise standard deviation for range (m).
   double std_radr_;
 
-  // Radar measurement noise standard deviation angle in rad
+  // Radar measurement noise standard deviation for bearing (rad).
   double std_radphi_;
 
-  // Radar measurement noise standard deviation radius change in m/s
-  double std_radrd_ ;
+  // Radar measurement noise standard deviation for range rate (m/s).
+  double std_radrd_;
 
-  // Weights of sigma points
+  // Weights used for the unscented transform sigma points.
   Eigen::VectorXd weights_;
 
-  // State dimension
+  // Dimension of the state vector.
   int n_x_;
 
-  // Augmented state dimension
+  // Dimension of the augmented state vector.
   int n_aug_;
 
-  // Sigma point spreading parameter
+  // Sigma-point spreading parameter.
   double lambda_;
 };
 
