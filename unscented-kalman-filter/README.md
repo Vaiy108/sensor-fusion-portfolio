@@ -58,6 +58,12 @@ The following diagram illustrates the Unscented Kalman Filter sensor fusion pipe
 
 The Unscented Kalman Filter estimates the system state:
 
+$$
+\[
+x = [p_x, p_y, v, \psi, \dot{\psi}]
+\]
+$$
+
 x = [px, py, v, ψ, ψ̇]
 
 where:
