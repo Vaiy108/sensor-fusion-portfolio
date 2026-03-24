@@ -279,6 +279,14 @@ unscented-kalman-filter
 ## Notes
 In this version, Eigen is resolved via `find_package(Eigen3 CONFIG REQUIRED)` instead of bundling the dependency in the repository.
 
+## EKF vs UKF
+
+- **EKF**: Uses Jacobian-based linearization → computationally efficient but less accurate for strong nonlinearities
+- **UKF**: Uses sigma points → better nonlinear estimation at higher computational cost
+
+In this portfolio:
+- EKF demonstrates dataset-driven validation and RMSE evaluation
+- UKF demonstrates nonlinear behavior in a simulation environment
 
 ## Author
 **Vasan Iyer**  
