@@ -149,12 +149,8 @@ Features:
 - C++ implementation with Eigen
 - CMake build system
 
-🔗 Project link: https://github.com/Vaiy108/sensor-fusion-portfolio/tree/main/extended-kalman-filter
+🔗 Project link: [extended-kalman-filter](./extended-kalman-filter)
 
-Project folder:
-extended-kalman-filter/
-
-[Open project](./extended-kalman-filter)
 
 ### 🛠️ Tech Stack
 
