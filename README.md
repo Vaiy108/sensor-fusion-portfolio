@@ -71,10 +71,10 @@ State vector includes:
 - yaw angle $$(\psi)$$
 - yaw rate $$(\dot{\psi})$$
 
-- Motion model:  
+Motion model:  
   **CTRV (Constant Turn Rate and Velocity)**
 
-- Key components:
+Key components:
   - Augmented state with process noise
   - Sigma point generation using unscented transform
   - Nonlinear prediction step
