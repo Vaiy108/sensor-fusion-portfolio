@@ -1,5 +1,21 @@
 # Sensor Fusion Portfolio
 
+## Sensor Fusion Approach in This Portfolio
+
+This portfolio demonstrates sensor fusion across different levels:
+
+- **EKF (Extended Kalman Filter)**  
+  Dataset-driven estimation using linearization (Jacobian) for nonlinear radar measurements. Focus on correctness and RMSE evaluation.
+
+- **UKF (Unscented Kalman Filter)**  
+  Nonlinear estimation using sigma points with a PCL-based simulation environment. Focus on system behavior and visualization.
+
+- **Radar-Camera Fusion**  
+  Real-time multi-sensor integration combining perception and tracking.
+
+This progression reflects increasing system complexity:
+EKF → UKF → Multi-sensor fusion system.
+
 ## ⭐ Featured Project — Real-Time Radar-Camera Fusion (C++)
 
 A real-time C++ prototype for multi-object tracking and sensor fusion using
@@ -119,6 +135,24 @@ Key components:
 - Demonstrates nonlinear sensor fusion (UKF)
 - Shows probabilistic state estimation in C++
 - Theoretical Foundation for real-world tracking systems
+
+---
+
+### Extended Kalman Filter
+Sensor fusion using Jacobian-based linearization for radar and lidar measurements with dataset-driven evaluation. This project complements the UKF implementation by providing a baseline linearization-based approach for comparison.
+
+Features:
+- EKF prediction and update pipeline
+- Radar nonlinear measurement handling using Jacobian
+- Lidar linear update
+- RMSE-based evaluation using ground-truth dataset
+- C++ implementation with Eigen
+- CMake build system
+
+Project folder:
+extended-kalman-filter/
+
+[Open project](./extended-kalman-filter)
 
 ### 🛠️ Tech Stack
 
