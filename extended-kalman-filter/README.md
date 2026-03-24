@@ -17,7 +17,7 @@ The implementation focuses on:
 
 Estimate the state of a moving object:
 $$\[
-x = [p_x, p_y, v, \psi, \dot{\psi}]
+x = [p_x, p_y, v_x, v_y]
 \]$$
 
 using noisy sensor measurements:
