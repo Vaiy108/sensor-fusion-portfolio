@@ -1,9 +1,21 @@
 # Sensor Fusion Portfolio
 
-## 🚗 Real-Time Radar-Camera Fusion (C++)
+## ⭐ Featured Project — Real-Time Radar-Camera Fusion (C++)
 
 A real-time C++ prototype for multi-object tracking and sensor fusion using
 camera detection, Kalman filtering, and EKF-based radar updates.
+
+### What I implemented
+- Real-time multi-object tracking in C++
+- Kalman filter (constant velocity model)
+- EKF radar update (range + angle)
+- Camera-radar association
+- Detection filtering and tracking stabilization
+
+### Engineering Decisions
+- Used motion detection for real-time performance on CPU
+- Integrated YOLO as optional detector (higher accuracy, lower FPS)
+- Used Kalman filter to maintain tracking between detections
 
 ### Key Features
 - Motion-based object detection (real-time)
@@ -19,7 +31,23 @@ C++, OpenCV, CMake, Visual Studio
 ### Project Link
 👉 https://github.com/YOUR_USERNAME/radar-camera-fusion
 
-This repository showcases my work on **sensor fusion and state estimation** for autonomous systems, with a focus on **Kalman filtering techniques** used in robotics and self-driving applications.
+
+---
+
+## 🧠 Core Filtering & Estimation Projects
+
+### Unscented Kalman Filter (UKF)
+Radar + Lidar fusion using CTRV motion model.
+
+🔗 Repo: https://github.com/Vaiy198/unscented-kalman-filter
+
+Key concepts:
+- Nonlinear state estimation
+- Sigma points (unscented transform)
+- Radar + lidar fusion
+
+---
+This project showcases my work on **sensor fusion and state estimation** for autonomous systems, with a focus on **Kalman filtering techniques** used in robotics and self-driving applications.
 
 All projects are implemented in **C++** with an emphasis on mathematical correctness, real-time considerations, and clear system design.
 
@@ -27,12 +55,9 @@ All projects are implemented in **C++** with an emphasis on mathematical correct
 
 ## 🚀 Featured Project: Unscented Kalman Filter (UKF)
 
-A full implementation of an **Unscented Kalman Filter (UKF)** for fusing **radar and lidar measurements** to estimate the state of a moving object.
-
-### 🔍 Problem
-Estimate position, velocity, and orientation of an object using:
-- **Radar (nonlinear measurements)** → range, bearing, range rate  
-- **Lidar (linear measurements)** → position (x, y)
+### Overview
+Implemented a full Unscented Kalman Filter (UKF) to fuse radar and lidar measurements
+for tracking a moving object under nonlinear dynamics (CTRV model).
 
 ---
 
@@ -75,7 +100,7 @@ $$
 ### 📊 Results
 
 <p align="center">
-<img src="media/ukf_track.gif" width="900"/>
+<img src="media/ukf_track.gif" width="600"/>
 </p>
 
 - Accurate tracking of nonlinear motion
