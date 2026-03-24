@@ -4,8 +4,6 @@
 
 This project implements an **Extended Kalman Filter (EKF)** for fusing **lidar and radar measurements** to estimate the state of a moving object. 
 
-This project currently includes a small structured sample dataset to verify the EKF pipeline, sensor parsing, and RMSE evaluation flow. Final benchmark-quality performance evaluation should be performed on a larger dataset.
-
 The implementation focuses on:
 - nonlinear measurement handling through Jacobian-based linearization,
 - sensor fusion across heterogeneous sensors,
@@ -109,6 +107,12 @@ Example reported metrics:
 - vx: 1.4330
 - vy: 1.5153
 ```
+## Notes on Evaluation
+
+This dataset is a short synthetic sequence used to validate the EKF pipeline, sensor parsing, and RMSE computation.
+
+A larger dataset would be used for final performance benchmarking and tuning.
+
 ## My Contribution
 - Implemented the full EKF pipeline in C++
 - Designed lidar and radar update paths
@@ -154,17 +158,22 @@ run
 - Importance of numerical stability and angle normalization
 - Value of dataset-driven validation using RMSE
 
-## Author
+## Practical Considerations
 
-Vasan Iyer
-Sensor Fusion / Autonomous Systems Engineer
+- EKF is computationally efficient but relies on linearization, which can introduce errors in highly nonlinear scenarios.
+- Performance depends on accurate noise tuning and model assumptions.
+- This implementation serves as a baseline for comparison with more advanced filters such as the UKF.
 
-Focus:
+## 👤 Author
 
-- Sensor fusion & state estimation
-- Autonomous systems
-- Flight dynamics & control
-- Embedded systems (C++, Python)
-- UAV systems & simulation
+**Vasan Iyer**  
+Sensor Fusion / Autonomous Systems Engineer  
+
+Focus areas:
+- Sensor fusion & state estimation  
+- Autonomous systems  
+- Flight dynamics & control  
+- Embedded systems (C++, Python)  
+- UAV systems & simulation  
 
 GitHub: https://github.com/Vaiy108
