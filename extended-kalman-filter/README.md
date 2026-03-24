@@ -18,13 +18,14 @@ The implementation focuses on:
 Estimate the state of a moving object:
 $$
 \[
-x = [p_x, p_y, v_x, v_y]
+x = [p_x, p_y, v, \psi, \dot{\psi}]
 \]
 $$
-using noisy sensor measurements from:
 
-- **Lidar** → Cartesian position measurements \((p_x, p_y)\)
-- **Radar** → Polar measurements \((\rho, \phi, \dot{\rho})\)
+using noisy sensor measurements:
+
+- **Lidar** → linear position measurements $$\((p_x, p_y)\)$$  
+- **Radar** → nonlinear measurements $$\((\rho, \phi, \dot{\rho})\)$$
 
 ---
 
