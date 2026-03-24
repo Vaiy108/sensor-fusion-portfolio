@@ -37,7 +37,8 @@ C++, OpenCV, CMake, Visual Studio
 ## Core Filtering & Estimation Projects
 
 ### Unscented Kalman Filter (UKF)
-Radar + Lidar fusion using CTRV motion model.
+Radar + Lidar fusion using CTRV motion model. This project builds the theoretical foundation for the real-time
+radar-camera fusion system implemented above.
 
 🔗 Project link: [unscented-kalman-filter](https://github.com/Vaiy108/sensor-fusion-portfolio/tree/main/unscented-kalman-filter)
 
@@ -55,26 +56,26 @@ sigma points through nonlinear dynamics for better accuracy. :contentReference[o
 This project showcases my work on **sensor fusion and state estimation** for autonomous systems, with a focus on **Kalman filtering techniques** used in robotics and self-driving applications.
 All projects are implemented in **C++** with an emphasis on mathematical correctness, real-time considerations, and clear system design.
 
----
+### What I implemented
+- Full UKF pipeline (initialization, prediction, update)
+- Sigma point generation and propagation
+- CTRV motion model for nonlinear dynamics
+- Radar update (nonlinear measurement model)
+- Lidar update (linear measurement model)
+- Angle normalization and numerical stability handling
 
-###  Approach
+### Highlights of this project
+- Demonstrates understanding of nonlinear sensor fusion
+- Shows ability to implement probabilistic state estimation in C++
+- Forms the theoretical foundation for real-world tracking systems
+
+---
 ### State Representation
 State vector includes:
 - position ($$p_x, p_y$$)
 - velocity (v)
 - yaw angle $$(\psi)$$
 - yaw rate $$(\dot{\psi})$$
-
-Motion model: CTRV (Constant Turn Rate and Velocity)
-
-- State vector:
-
-$$
-\[
-x = [p_x, p_y, v, \psi, \dot{\psi}]
-\]
-$$
-
 
 - Motion model:  
   **CTRV (Constant Turn Rate and Velocity)**
@@ -84,8 +85,8 @@ $$
   - Sigma point generation using unscented transform
   - Nonlinear prediction step
   - Sensor-specific update steps:
-    - Linear update (lidar)
-    - Nonlinear update (radar)
+  - Linear update (lidar)
+  - Nonlinear update (radar)
 
 ---
 
@@ -104,7 +105,7 @@ $$
 ### 📊 Results
 
 <p align="center">
-<img src="media/ukf_track.gif" width="600"/>
+<img src="media/ukf_track.gif" width="500"/>
 </p>
 
 - Accurate tracking of nonlinear motion
