@@ -34,7 +34,7 @@ C++, OpenCV, CMake, Visual Studio
 
 ---
 
-## 🧠 Core Filtering & Estimation Projects
+## Core Filtering & Estimation Projects
 
 ### Unscented Kalman Filter (UKF)
 Radar + Lidar fusion using CTRV motion model.
@@ -47,17 +47,12 @@ Key concepts:
 - Radar + lidar fusion
 
 ---
-This project showcases my work on **sensor fusion and state estimation** for autonomous systems, with a focus on **Kalman filtering techniques** used in robotics and self-driving applications.
-
-All projects are implemented in **C++** with an emphasis on mathematical correctness, real-time considerations, and clear system design.
-
----
-
-## 🚀 Featured Project: Unscented Kalman Filter (UKF)
 
 ### Overview
 Implemented a full Unscented Kalman Filter (UKF) to fuse radar and lidar measurements
-for tracking a moving object under nonlinear dynamics (CTRV model).
+for tracking a moving object under nonlinear dynamics (CTRV model). This project showcases my work on **sensor fusion and state estimation** for autonomous systems, with a focus on **Kalman filtering techniques** used in robotics and self-driving applications.
+
+All projects are implemented in **C++** with an emphasis on mathematical correctness, real-time considerations, and clear system design.
 
 ---
 
