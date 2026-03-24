@@ -47,14 +47,25 @@ Key concepts:
 - Radar + lidar fusion
 
 ### Overview
-Implemented a full Unscented Kalman Filter (UKF) to fuse radar and lidar measurements
-for tracking a moving object under nonlinear dynamics (CTRV model). This project showcases my work on **sensor fusion and state estimation** for autonomous systems, with a focus on **Kalman filtering techniques** used in robotics and self-driving applications.
+Implemented an Unscented Kalman Filter (UKF) to fuse radar and lidar measurements
+for tracking a moving object under nonlinear motion (CTRV model).
 
+The UKF improves over EKF by avoiding linearization and instead propagating
+sigma points through nonlinear dynamics for better accuracy. :contentReference[oaicite:0]{index=0}
+This project showcases my work on **sensor fusion and state estimation** for autonomous systems, with a focus on **Kalman filtering techniques** used in robotics and self-driving applications.
 All projects are implemented in **C++** with an emphasis on mathematical correctness, real-time considerations, and clear system design.
 
 ---
 
 ###  Approach
+### State Representation
+State vector includes:
+- position ($$p_x, p_y$$)
+- velocity (v)
+- yaw angle $$(\psi)$$
+- yaw rate $$(\dot{\psi})$$
+
+Motion model: CTRV (Constant Turn Rate and Velocity)
 
 - State vector:
 
