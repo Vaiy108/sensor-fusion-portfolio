@@ -37,7 +37,7 @@ C++, OpenCV, CMake, Visual Studio
 ## Core Filtering & Estimation Projects
 
 ### Unscented Kalman Filter (UKF)
-Radar + Lidar fusion using CTRV motion model. This project builds the theoretical foundation for the real-time
+This project builds the theoretical foundation for the real-time
 radar-camera fusion system implemented above.
 
 🔗 Project link: [unscented-kalman-filter](https://github.com/Vaiy108/sensor-fusion-portfolio/tree/main/unscented-kalman-filter)
@@ -48,13 +48,12 @@ Key concepts:
 - Radar + lidar fusion
 
 ### Overview
+
 Implemented an Unscented Kalman Filter (UKF) to fuse radar and lidar measurements
 for tracking a moving object under nonlinear motion (CTRV model).
 
 The UKF improves over EKF by avoiding linearization and instead propagating
-sigma points through nonlinear dynamics for better accuracy. :contentReference[oaicite:0]{index=0}
-This project showcases my work on **sensor fusion and state estimation** for autonomous systems, with a focus on **Kalman filtering techniques** used in robotics and self-driving applications.
-All projects are implemented in **C++** with an emphasis on mathematical correctness, real-time considerations, and clear system design.
+sigma points through nonlinear dynamics for better accuracy.
 
 ### What I implemented
 - Full UKF pipeline (initialization, prediction, update)
@@ -63,11 +62,6 @@ All projects are implemented in **C++** with an emphasis on mathematical correct
 - Radar update (nonlinear measurement model)
 - Lidar update (linear measurement model)
 - Angle normalization and numerical stability handling
-
-### Highlights of this project
-- Demonstrates understanding of nonlinear sensor fusion
-- Shows ability to implement probabilistic state estimation in C++
-- Forms the theoretical foundation for real-world tracking systems
 
 ---
 ### State Representation
@@ -102,7 +96,7 @@ State vector includes:
 
 ---
 
-### 📊 Results
+### Results
 
 <p align="center">
 <img src="media/ukf_track.gif" width="500"/>
@@ -121,6 +115,11 @@ State vector includes:
 ```
 ---
 
+### Highlights of this project
+- Demonstrates nonlinear sensor fusion (UKF)
+- Shows probabilistic state estimation in C++
+- Theoretical Foundation for real-world tracking systems
+
 ### 🛠️ Tech Stack
 
 - C++
@@ -130,29 +129,7 @@ State vector includes:
 
 ---
 
-### 📁 Project Structure
-```
-unscented-kalman-filter/
-├── src/
-│ ├── ukf.cpp
-│ ├── ukf.h
-│ └── main.cpp
-├── media/
-└── CMakeLists.txt
-````
 
-
----
-
-### 💡 Skills Learned
-
-- Practical implementation of the **Unscented Kalman Filter**
-- Handling nonlinear systems with sigma points
-- Differences between radar and lidar measurement models
-- Importance of numerical stability in estimation systems
-- Real-world considerations in sensor fusion pipelines
-
----
 
 ## 🧩 Skills Demonstrated
 
