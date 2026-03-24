@@ -1,5 +1,24 @@
 # Sensor Fusion Portfolio
 
+## 🚗 Real-Time Radar-Camera Fusion (C++)
+
+A real-time C++ prototype for multi-object tracking and sensor fusion using
+camera detection, Kalman filtering, and EKF-based radar updates.
+
+### Key Features
+- Motion-based object detection (real-time)
+- Multi-object tracking with persistent IDs
+- Constant-velocity Kalman filter
+- EKF radar update (range + angle)
+- Simulated radar measurements
+- Optional YOLO detector (OpenCV DNN)
+
+### Tech Stack
+C++, OpenCV, CMake, Visual Studio
+
+### Project Link
+👉 https://github.com/YOUR_USERNAME/radar-camera-fusion
+
 This repository showcases my work on **sensor fusion and state estimation** for autonomous systems, with a focus on **Kalman filtering techniques** used in robotics and self-driving applications.
 
 All projects are implemented in **C++** with an emphasis on mathematical correctness, real-time considerations, and clear system design.
