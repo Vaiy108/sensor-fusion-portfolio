@@ -44,11 +44,7 @@ The Extended Kalman Filter is used because radar measurements are nonlinear in C
 
 - **State Representation**  
   The EKF uses a Cartesian velocity state:
-  $$
-  \[
-  x = [p_x, p_y, v_x, v_y]
-  \]
-  $$
+  $$x = [p_x, p_y, v_x, v_y]$$
 
 - **Motion Model**  
   A constant-velocity model is used for prediction.
