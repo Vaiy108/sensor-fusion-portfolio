@@ -39,7 +39,7 @@ C++, OpenCV, CMake, Visual Studio
 ### Unscented Kalman Filter (UKF)
 Radar + Lidar fusion using CTRV motion model.
 
-🔗 Projetc link: unscented-kalman-filter
+🔗 Projetc link: [unscented-kalman-filter](https://github.com/Vaiy108/sensor-fusion-portfolio/tree/main/unscented-kalman-filter)
 
 Key concepts:
 - Nonlinear state estimation
