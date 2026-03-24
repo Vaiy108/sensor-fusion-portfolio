@@ -29,7 +29,7 @@ camera detection, Kalman filtering, and EKF-based radar updates.
 C++, OpenCV, CMake, Visual Studio
 
 ### Project Link
-👉 https://github.com/YOUR_USERNAME/radar-camera-fusion
+👉 https://github.com/Vaiy108/radar-camera-fusion
 
 
 ---
@@ -39,14 +39,12 @@ C++, OpenCV, CMake, Visual Studio
 ### Unscented Kalman Filter (UKF)
 Radar + Lidar fusion using CTRV motion model.
 
-🔗 Repo: https://github.com/Vaiy198/unscented-kalman-filter
+🔗 Repo: https://github.com/Vaiy108/unscented-kalman-filter
 
 Key concepts:
 - Nonlinear state estimation
 - Sigma points (unscented transform)
 - Radar + lidar fusion
-
----
 
 ### Overview
 Implemented a full Unscented Kalman Filter (UKF) to fuse radar and lidar measurements
