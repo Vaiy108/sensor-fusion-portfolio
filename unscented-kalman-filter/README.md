@@ -71,7 +71,6 @@ The filter performs two main steps:
 - Transform sigma points into measurement space
 - Normalize angles to maintain consistency
 - Apply unscented update
-  
 Radar and lidar measurements are fused to improve state estimation.
 ---
 
