@@ -28,6 +28,12 @@ EKF → UKF → Multi-sensor fusion system.
 - Track lifecycle management includes initialization, update, and deletion based on measurement consistency
 - Designed to scale toward multi-object tracking and integration with mapping modules (e.g., occupancy grids)
 
+## Data Association (Concept)
+- Measurements are associated to existing tracks using gating (Mahalanobis distance) to reject unlikely matches
+- Nearest-neighbor approach is used to assign measurements to predicted states
+- Handles uncertainty in sensor measurements and avoids incorrect track updates
+- Designed to extend toward probabilistic methods (e.g., JPDA) for multi-object tracking scenarios
+
 **Tracking Pipeline Overview:**
 
 Radar / Lidar → Measurement Processing → Data Association → EKF / UKF → Track Management → (Future: Occupancy Grid Mapping)
