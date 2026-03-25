@@ -70,9 +70,8 @@ The filter performs two main steps:
 #### Radar (Nonlinear)
 - Transform sigma points into measurement space
 - Normalize angles to maintain consistency
-- Apply unscented update
-
-###### Radar and lidar measurements are fused to improve state estimation.
+- Apply unscented update  
+##### Radar and lidar measurements are fused to improve state estimation.
 ---
 
 ## 🔧 Design Decisions
@@ -80,28 +79,28 @@ The filter performs two main steps:
 - **CTRV Motion Model Selection**  
   Chosen to capture nonlinear vehicle motion (constant turn rate and velocity), which better reflects real-world dynamics compared to linear models.
 
-- **UKF over EKF**
+- **UKF over EKF**  
   Used UKF to avoid linearization errors and improve accuracy for nonlinear radar measurements, especially in scenarios with high curvature motion.
 
-- **Radar vs Lidar Handling**
+- **Radar vs Lidar Handling**  
   Lidar uses a linear update, while radar requires nonlinear transformation due to polar measurements.
   
-- **Radar Nonlinearity Handling**
+- **Radar Nonlinearity Handling**  
   Incorporated radar measurements (range, angle, range rate) directly using sigma points, avoiding Jacobian computation and improving numerical stability.
 
-- **Angle Normalization**
+- **Angle Normalization**  
   Implemented to prevent discontinuities in yaw and bearing.
 
-- **Noise Tuning**
+- **Noise Tuning**  
   Process and measurement noise parameters were tuned empirically to balance responsiveness and stability under sensor noise.
 
-- **Initialization Strategy**
+- **Initialization Strategy**  
   Radar initializes velocity using range rate, while lidar initializes velocity as zero.
 
-- **Numerical Stability**
+- **Numerical Stability**  
   Safeguards added to avoid division by zero and instability in angle calculations.
 
-- **Limitations**
+- **Limitations**  
   Assumes constant turn rate and velocity; performance may degrade under abrupt maneuvers or highly dynamic motion.
 
 ---
