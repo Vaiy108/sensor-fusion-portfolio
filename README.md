@@ -16,6 +16,13 @@ This portfolio demonstrates sensor fusion across different levels:
 This progression reflects increasing system complexity:
 EKF → UKF → Multi-sensor fusion system.
 
+## Tracking System Extension (Concept)
+- Designed as part of a broader tracking pipeline: sensor → measurement → data association → state estimation (EKF/UKF) → track management
+- Measurements from radar/lidar are associated to tracked objects using gating and nearest-neighbor concepts
+- State estimation is performed using nonlinear filters (EKF/UKF) for robust tracking under sensor noise
+- Track lifecycle management includes initialization, update, and deletion based on measurement consistency
+- Designed to scale toward multi-object tracking and integration with mapping modules (e.g., occupancy grids)
+
 ## ⭐ Featured Project — Real-Time Radar-Camera Fusion (C++)
 
 A real-time C++ prototype for multi-object tracking and sensor fusion using
