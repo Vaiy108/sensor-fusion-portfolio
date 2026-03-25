@@ -216,7 +216,7 @@ make
 
 ### Tracking Visualization
 <p align="center">
-<img src="media/ukf_track.gif" width="900"/>
+<img src="media/ukf_track.gif" width="600"/>
 </p>
 
 ### Performance (RMSE)
