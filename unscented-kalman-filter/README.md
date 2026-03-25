@@ -95,10 +95,10 @@ Radar and lidar measurements are fused to improve state estimation.
 - **Noise Tuning**
   Process and measurement noise parameters were tuned empirically to balance responsiveness and stability under sensor noise.
 
-- **Initialization Strategy**  
+- **Initialization Strategy**
   Radar initializes velocity using range rate, while lidar initializes velocity as zero.
 
-- **Numerical Stability**  
+- **Numerical Stability**
   Safeguards added to avoid division by zero and instability in angle calculations.
 
 - **Limitations**
