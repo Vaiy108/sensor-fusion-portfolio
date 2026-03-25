@@ -23,6 +23,10 @@ EKF → UKF → Multi-sensor fusion system.
 - Track lifecycle management includes initialization, update, and deletion based on measurement consistency
 - Designed to scale toward multi-object tracking and integration with mapping modules (e.g., occupancy grids)
 
+**Tracking Pipeline Overview:**
+
+Radar / Lidar → Measurement Processing → Data Association → EKF / UKF → Track Management → (Future: Occupancy Grid Mapping)
+
 ## ⭐ Featured Project — Real-Time Radar-Camera Fusion (C++)
 
 A real-time C++ prototype for multi-object tracking and sensor fusion using
