@@ -128,23 +128,11 @@ Key components:
 
 ---
 
-### Results
+### Example Visualization
 
 <p align="center">
-<img src="media/ukf_track.gif" width="500"/>
+<img src="media/ukf_track.gif" width="450"/>
 </p>
-
-- Accurate tracking of nonlinear motion
-- Stable fusion of radar and lidar measurements
-- Smooth trajectory estimation
-
-- **RMSE:**
-```
-- px: 0.06
-- py: 0.10
-- vx: 0.42
-- vy: 0.63
-```
 ---
 
 ### Highlights of this project
