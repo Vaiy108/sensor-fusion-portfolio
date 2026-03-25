@@ -85,6 +85,7 @@ Radar and lidar measurements are fused to improve state estimation.
 
 - **Radar vs Lidar Handling**  
   Lidar uses a linear update, while radar requires nonlinear transformation due to polar measurements.
+  
 - **Radar Nonlinearity Handling**
   Incorporated radar measurements (range, angle, range rate) directly using sigma points, avoiding Jacobian computation and improving numerical stability.
 
