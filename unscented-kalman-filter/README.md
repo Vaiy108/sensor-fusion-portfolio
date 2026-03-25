@@ -77,7 +77,7 @@ The filter performs two main steps:
 
 ## 🔧 Design Decisions
 
-- **CTRV Motion Model Selection**:
+- **CTRV Motion Model Selection**  
   Chosen to capture nonlinear vehicle motion (constant turn rate and velocity), which better reflects real-world dynamics compared to linear models.
 
 - **UKF over EKF**
