@@ -1,5 +1,10 @@
 # Sensor Fusion Portfolio
 
+## Overview
+
+This repository demonstrates the implementation of multi-sensor tracking and state estimation algorithms for autonomous systems, focusing on radar and lidar fusion using Extended and Unscented Kalman Filters.  
+The work reflects a system-level approach to tracking, including measurement modeling, nonlinear estimation, and integration into a broader tracking pipeline, with future extensions toward multi-object tracking and environment mapping.
+
 ## Sensor Fusion Approach in This Portfolio
 
 This portfolio demonstrates sensor fusion across different levels:
