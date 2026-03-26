@@ -66,6 +66,12 @@ camera detection, Kalman filtering, and EKF-based radar updates.
 ### Tech Stack
 C++, OpenCV, CMake, Visual Studio
 
+### Demo multi-object tracking
+
+<p align="center">
+<img src="media/fusion_demo1.gif" width="300"/> 
+</p>
+
 ### Project repo Link
 🔗 Repo: https://github.com/Vaiy108/radar-camera-fusion
 
